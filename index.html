@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Infiniti Kapital — Trading Institucional en Forex, Índices y Commodities</title>
+  <meta name="description" content="Trading institucional con SMC en Forex, Índices, Oro y Commodities. CopyTrading, Journal, bot SMC Pro y métricas verificables."/>
+  <meta name="theme-color" content="#0b0b0c" />
+
+  <!-- Open Graph / WhatsApp / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://infinitikapital.com/" />
+  <meta property="og:title" content="Infiniti Kapital — Trading institucional" />
+  <meta property="og:description" content="Forex, Índices y Commodities con gestión de riesgo profesional. CopyTrading, Journal y bot SMC Pro." />
+  <meta property="og:image" content="https://infinitikapital.com/assets/img/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Infiniti Kapital — Trading institucional" />
+  <meta name="twitter:description" content="Forex, Índices y Commodities con gestión de riesgo profesional." />
+  <meta name="twitter:image" content="https://infinitikapital.com/assets/img/og-cover.jpg" />
+
+  <link rel="icon" href="/favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{ --bg:#0b0b0c; --card:#111216; --muted:#9aa0a6; --fg:#e7e9ea; --brand:#d4af37; --brand-2:#18a957; --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.35);}
+    *{box-sizing:border-box}
+    html, body{overflow-x:hidden;background:#0b0b0c}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto;color:var(--fg);background:linear-gradient(180deg,#080809,#0b0b0c 30%) fixed;padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1180px;margin:0 auto;padding:0 max(20px, env(safe-area-inset-left))}
+    .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.2rem;border-radius:999px;font-weight:600;letter-spacing:.2px}
+    .btn-primary{background:linear-gradient(135deg,var(--brand),#b38b24);color:#111;box-shadow:0 6px 22px rgba(212,175,55,.35)}
+    .btn-ghost{border:1px solid #2b2c31;color:var(--fg);background:transparent}
+    header{position:sticky;top:0;z-index:50;background:rgba(8,8,9,.6);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid rgba(255,255,255,.06);padding-top:env(safe-area-inset-top)}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    nav .left{display:flex;align-items:center;gap:14px}
+    nav .logo{display:flex;align-items:center;gap:.6rem;font-weight:800}
+    nav .logo img{width:28px;height:28px;border-radius:8px;display:inline-block}
+    nav .menu{display:flex;gap:1rem;flex-wrap:wrap}
+    .socials{display:flex;gap:10px;align-items:center}
+    .socials a{display:inline-flex;align-items:center;gap:.35rem;padding:.4rem .6rem;border-radius:999px;border:1px solid #2b2c31;color:var(--muted)}
+    .socials a:hover{color:#fff;border-color:#3a3b41}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:72px 0 40px}
+    .hero h1{font-size:clamp(28px,7.2vw,46px);line-height:1.08;margin:.2rem 0 1rem;word-break:normal}
+    .hero p{color:var(--muted);font-size:1.02rem}
+    .hero .card{background:radial-gradient(1200px 600px at 10% -10%, rgba(212,175,55,.15),transparent),#0f1014;border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    .section{padding:56px 0}
+    .section h2{font-size:clamp(22px,5vw,34px);margin:0 0 .6rem}
+    .muted{color:var(--muted)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .kpi .item{padding:18px;border-radius:16px;background:linear-gradient(180deg,#0e0f12,#0a0b0d);border:1px solid rgba(255,255,255,.06)}
+    .kpi .item b{font-size:26px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{padding:.5rem .8rem;border:1px solid rgba(255,255,255,.1);border-radius:999px;color:var(--muted)}
+    .features .card h3{margin:.2rem 0 .4rem;font-size:1.03rem}
+    .tw-widget{height:360px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+    .selector{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+    .selector select{background:#0f1115;border:1px solid #1b1d23;color:var(--fg);padding:8px 10px;border-radius:10px;max-width:100%}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .testimonials .quote{font-size:.98rem;color:#d0d2d6}
+    img, svg{max-width:100%;height:auto}
+    form{display:grid;gap:12px}
+    input, textarea{background:#0f1115;border:1px solid #1b1d23;color:var(--fg);padding:12px 14px;border-radius:12px;outline:none}
+    input:focus, textarea:focus{border-color:var(--brand)}
+    .submit{justify-content:center}
+    footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0;color:var(--muted)}
+    .footer-grid{display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+    @media (max-width:980px){.hero{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}.grid-4{grid-template-columns:1fr 1fr}.kpi{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav>
+        <div class="left">
+          <div class="logo"><img src="/assets/img/logo.png" alt="Infiniti Kapital logo"/> Infiniti Kapital</div>
+          <div class="socials">
+            <a href="https://www.instagram.com/infiniti_kapital?igsh=dGpncHRjbzZkd3Vx&utm_source=qr" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/>
+                <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.6"/>
+                <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
+              </svg> Instagram
+            </a>
+            <a href="https://t.me/+d8in2Q7kwXU1MjJh" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M21 4L3 11l6 2 2 6 3-4 4-11z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/>
+              </svg> Telegram
+            </a>
+          </div>
+        </div>
+        <div class="menu">
+          <a href="#servicios">Servicios</a>
+          <a href="#activos">Activos</a>
+          <a href="#resultados">Resultados</a>
+          <a href="#blog">Blog</a>
+          <a href="#contacto" class="btn btn-primary">Contáctanos</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <div>
+        <div class="chip" style="display:inline-flex;align-items:center;gap:.5rem;">
+          <span style="width:8px;height:8px;background:var(--brand-2);border-radius:50%;display:inline-block"></span>
+          Trading institucional con SMC
+        </div>
+        <h1>Operamos Forex, Índices y Commodities con <span style="background:linear-gradient(135deg,var(--brand),#ffe08a);-webkit-background-clip:text;background-clip:text;color:transparent">gestión de riesgo profesional</span></h1>
+        <p>Combinamos <b>Smart Money Concepts</b>, validación de tendencia HTF (H1/H4), y ejecución disciplinada. Servicios de <b>CopyTrading</b>, <b>Journal</b> y <b>bot SMC Pro</b>.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#contacto">Quiero más información</a>
+          <a class="btn btn-ghost" href="#resultados">Ver resultados</a>
+        </div>
+        <div class="kpi" style="margin-top:18px">
+          <div class="item"><div class="muted">RR objetivo</div><b>≥ 1 : 2</b></div>
+          <div class="item"><div class="muted">Horario</div><b>8:00–12:00</b></div>
+          <div class="item"><div class="muted">Riesgo por trade</div><b>0.5%*</b></div>
+          <div class="item"><div class="muted">Plataformas</div><b>MT5 / Web</b></div>
+        </div>
+        <p class="muted" style="font-size:.85rem;margin-top:8px">*Parámetro configurable según perfil y condiciones de mercado.</p>
+      </div>
+      <div class="card">
+        <div class="selector">
+          <span class="muted">Símbolo:</span>
+          <select id="symbolSelect">
+            <option value="NASDAQ:NDX">NASDAQ 100</option>
+            <option value="OANDA:XAUUSD">Oro (XAUUSD)</option>
+            <option value="FX:EURUSD">EURUSD</option>
+            <option value="CURRENCYCOM:US500">S&P 500 (US500)</option>
+            <option value="CURRENCYCOM:US30">Dow Jones (US30)</option>
+          </select>
+        </div>
+        <div class="tw-widget">
+          <div class="tradingview-widget-container" style="height:100%">
+            <div id="tradingview_ik" style="height:100%"></div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <script>
+          function renderTV(sym){
+            if (!window.TradingView) return;
+            document.getElementById('tradingview_ik').innerHTML = '';
+            new TradingView.widget({
+              autosize:true,
+              symbol:sym,
+              interval:"15",
+              timezone:"America/Santo_Domingo",
+              theme:"dark",
+              style:"1",
+              hide_top_toolbar:false,
+              hide_legend:false,
+              container_id:"tradingview_ik"
+            });
+          }
+          var sel = document.getElementById('symbolSelect');
+          sel.addEventListener('change', function(){ renderTV(this.value); });
+          renderTV(sel.value);
+        </script>
+      </div>
+    </section>
+
+    <section id="servicios" class="section wrap features">
+      <h2>Servicios</h2>
+      <p class="muted">Soluciones integrales para operar con consistencia y control del riesgo.</p>
+      <div class="grid-4" style="margin-top:16px">
+        <div class="card"><h3>Bot SMC Pro (MT5)</h3><p class="muted">Ejecución algorítmica con SMC (OB, FVG, BOS/CHoCH), validación H1/H4, TP/SL y break-even inteligente.</p></div>
+        <div class="card"><h3>CopyTrading / MAM</h3><p class="muted">Replica operaciones en múltiples cuentas con parámetros de riesgo personalizados.</p></div>
+        <div class="card"><h3>Journal & Analytics</h3><p class="muted">Métricas clave: RR promedio, win-rate, drawdown, best/worst trade, por activo y sesión.</p></div>
+        <div class="card"><h3>Formación & Comunidad</h3><p class="muted">Sesiones privadas, análisis en vivo, guías de estructura del mercado y gestión del riesgo.</p></div>
+      </div>
+    </section>
+
+    <section id="activos" class="section wrap">
+      <h2>Activos</h2>
+      <div class="chips" style="margin-top:10px">
+        <span class="chip">Forex (EURUSD, GBPUSD, AUDUSD, etc.)</span>
+        <span class="chip">Índices (NASDAQ 100, SP500, US30)</span>
+        <span class="chip">Metales (Oro, Plata)</span>
+        <span class="chip">Commodities & Futuros</span>
+        <span class="chip">Sesiones: NY / Londres</span>
+      </div>
+      <div class="grid-3" style="margin-top:18px">
+        <div class="card"><b>Forex</b><p class="muted">Ejecución con filtros de tendencia y liquidez; control de riesgo por posición.</p></div>
+        <div class="card"><b>Índices</b><p class="muted">Operativa NAS100, SP500 y US30 con validación HTF y timings de sesión.</p></div>
+        <div class="card"><b>Oro</b><p class="muted">XAUUSD con ADR guard, FVG/OB y gestión dinámica del stop.</p></div>
+      </div>
+    </section>
+
+    <section id="resultados" class="section wrap">
+      <h2>Resultados & Métricas</h2>
+      <p class="muted">Transparencia y control: muestra tus KPIs con datos verificables (MyFXBook / reportes MT5).</p>
+      <div class="grid-3" style="margin-top:16px">
+        <div class="card"><b>Rentabilidad mensual</b><p class="muted">+X% promedio (últimos 6–12 meses)</p></div>
+        <div class="card"><b>Drawdown máximo</b><p class="muted">≤ Y% con control dinámico del riesgo</p></div>
+        <div class="card"><b>RR promedio</b><p class="muted">≥ 1:2 con gestión parcial y BE</p></div>
+      </div>
+      <div class="card" style="margin-top:18px">
+        <div class="muted">Ejemplo de widget de rendimiento (incrusta tu gráfico o reporte)</div>
+        <div style="height:220px;border:1px dashed #2b2c31;border-radius:12px;display:flex;align-items:center;justify-content:center;opacity:.8">Área para gráfico/iframe de resultados</div>
+      </div>
+    </section>
+
+    <section id="testimonios" class="section wrap testimonials">
+      <h2>Testimonios</h2>
+      <div class="grid-3" style="margin-top:16px">
+        <div class="card quote">“El enfoque SMC del equipo de Infiniti Kapital cambió mi gestión del riesgo por completo.” — <b>Trader FTMO</b></div>
+        <div class="card quote">“El Journal nos dio visibilidad real del RR y drawdown. Decisiones basadas en datos.” — <b>Cuenta Prop</b></div>
+        <div class="card quote">“CopyTrading con parámetros personalizados: mismo sesgo, mi propio riesgo.” — <b>Cliente IK</b></div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section wrap">
+      <div class="grid-3">
+        <div style="grid-column:1 / -1">
+          <h2>¿Hablamos?</h2>
+          <p class="muted">Cuéntanos tu objetivo y te contactamos. También puedes escribirnos por Telegram o Instagram.</p>
+        </div>
+        <div class="card" style="grid-column:1 / 3">
+          <form>
+            <input type="text" placeholder="Nombre completo" required>
+            <input type="email" placeholder="Correo" required>
+            <input type="text" placeholder="Teléfono / Telegram (opcional)">
+            <textarea rows="5" placeholder="Cuéntanos tu caso: Forex, Índices, Oro, Futuros…" required></textarea>
+            <button class="btn btn-primary submit" type="submit">Enviar</button>
+          </form>
+        </div>
+        <div class="card" style="display:flex;flex-direction:column;gap:10px">
+          <b>Infiniti Kapital</b>
+          <span class="muted">Trading institucional en Forex, Índices y Commodities</span>
+          <div class="socials">
+            <a href="https://www.instagram.com/infiniti_kapital?igsh=dGpncHRjbzZkd3Vx&utm_source=qr" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/>
+                <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.6"/>
+                <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
+              </svg> Instagram
+            </a>
+            <a href="https://t.me/+d8in2Q7kwXU1MjJh" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M21 4L3 11l6 2 2 6 3-4 4-11z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/>
+              </svg> Telegram
+            </a>
+          </div>
+          <a class="chip" href="mailto:contacto@infinitikapital.com">contacto@infinitikapital.com</a>
+          <span class="muted" style="font-size:.85rem">*El trading conlleva riesgos. Resultados pasados no garantizan rendimientos futuros.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>© <span id="y"></span> Infiniti Kapital. Todos los derechos reservados.</div>
+      <div class="socials">
+        <a href="https://www.instagram.com/infiniti_kapital?igsh=dGpncHRjbzZkd3Vx&utm_source=qr" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
+          </svg> <span class="hide-sm">Instagram</span>
+        </a>
+        <a href="https://t.me/+d8in2Q7kwXU1MjJh" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M21 4L3 11l6 2 2 6 3-4 4-11z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/>
+          </svg> <span class="hide-sm">Telegram</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
