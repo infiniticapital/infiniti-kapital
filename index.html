@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Infiniti Kapital — Home</title>
+  <style>
+    :root{
+      --bg:#0d1117; --panel:#111827; --text:#e5e7eb; --muted:#9ca3af; --accent:#facc15;
+      --border: rgba(255,255,255,.08);
+    }
+    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+    header{position:sticky;top:0;z-index:10;background:var(--panel);border-bottom:1px solid var(--border)}
+    .bar{max-width:1200px;margin:0 auto;display:flex;gap:16px;align-items:center;justify-content:space-between;padding:14px 20px}
+    .brand{font-weight:800;letter-spacing:.5px;color:var(--accent)}
+    nav a{color:var(--text);text-decoration:none;margin:0 10px;padding:8px 10px;border-radius:8px}
+    nav a.active, nav a:hover{background:rgba(250,204,21,.14);color:var(--accent)}
+    main{max-width:1200px;margin:0 auto;padding:24px 20px;display:grid;gap:20px}
+    .card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;padding:18px}
+    /* dashboard-style sections */
+    .section-content{display:none;grid-template-columns:repeat(12,1fr);gap:16px}
+    .section-content.active{display:grid}
+    .span-12{grid-column:span 12}
+    .span-6{grid-column:span 6}
+    @media (max-width:900px){ .section-content{grid-template-columns:1fr}.span-6{grid-column:span 1} }
+    footer{padding:22px 18px;border-top:1px solid var(--border);text-align:center;background:var(--panel);color:var(--muted)}
+    /* helper for anchor targets when using sticky header */
+    .anchor-offset{scroll-margin-top:76px}
+    /* button */
+    .btn{display:inline-block;background:var(--accent);color:#111;padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="bar">
+      <div class="brand">INFINITI KAPITAL</div>
+      <nav>
+        <a href="#dashboard" class="nav-item">Dashboard</a>
+        <a href="#calendario" class="nav-item">Calendario</a>
+        <a href="#cuentas" class="nav-item">Cuentas</a>
+        <a href="#operaciones" class="nav-item">Operaciones</a>
+        <a href="#analiticas" class="nav-item">Analíticas</a>
+        <a href="#estrategias" class="nav-item">Estrategias</a>
+        <a href="#configuracion" class="nav-item">Configuración</a>
+        <a href="#reportes" class="nav-item">Reportes</a>
+        <a href="#contacto" class="nav-item">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- DASHBOARD -->
+    <section id="dashboard-content" class="section-content active anchor-offset">
+      <div class="card span-12">
+        <h2>Dashboard</h2>
+        <p>Bienvenido a tu plataforma.</p>
+      </div>
+      <div class="card span-6">
+        <h3>Resumen</h3>
+        <p>Widgets, métricas, etc.</p>
+      </div>
+      <div class="card span-6">
+        <h3>Noticias</h3>
+        <p>Calendario económico de alto impacto.</p>
+      </div>
+    </section>
+
+    <!-- CALENDARIO -->
+    <section id="calendario-content" class="section-content anchor-offset">
+      <div class="card span-12">
+        <h2>Calendario</h2>
+        <p>Aquí tu calendario económico.</p>
+      </div>
+    </section>
+
+    <!-- CUENTAS -->
+    <section id="cuentas-content" class="section-content anchor-offset">
+      <div class="card span-12">
+        <h2>Cuentas</h2>
+        <p>Gestión de cuentas aquí.</p>
+      </div>
+    </section>
+
+    <!-- OPERACIONES -->
+    <section id="operaciones-content" class="section-content anchor-offset">
+      <div class="card span-12">
+        <h2>Operaciones</h2>
+        <p>Historial y registro.</p>
+      </div>
+    </section>
+
+    <!-- ANALITICAS -->
+    <section id="analiticas-content" class="section-content anchor-offset">
+      <div class="card span-12">
+        <h2>Analíticas</h2>
+        <p>Visualizaciones y KPIs.</p>
+      </div>
+    </section>
+
+    <!-- ESTRATEGIAS -->
+    <section id="estrategias-content" class="section-content anchor-offset">
+      <div class="card span-12">
+        <h2>Estrategias</h2>
+        <p>Gestión y pruebas.</p>
+      </div>
+    </section>
+
+    <!-- CONFIGURACIÓN -->
+    <section id="configuracion-content" class="section-content anchor-offset">
+      <div class="card span-12">
+        <h2>Configuración</h2>
+        <p>Preferencias del sistema.</p>
+      </div>
+    </section>
+
+    <!-- REPORTES -->
+    <section id="reportes-content" class="section-content anchor-offset">
+      <div class="card span-12">
+        <h2>Reportes</h2>
+        <p>Descarga de informes.</p>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto-content" class="section-content anchor-offset">
+      <div class="card span-12">
+        <h2>Contacto</h2>
+        <p>Escríbenos a <a href="mailto:hola@infinitikapital.com" class="btn">hola@infinitikapital.com</a></p>
+      </div>
+    </section>
+
+    <!-- Bloque: Link mínimo al Journal -->
+    <section class="card span-12">
+      <h3>Journal</h3>
+      <p>
+        <a href="https://journal-infiniti-kapital.netlify.app/" target="_blank" rel="noopener" class="btn">
+          🚀 Ir al Journal de Infiniti Kapital
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Infiniti Kapital — Todos los derechos reservados
+  </footer>
+
+  <!-- ===== Navegación por hash + secciones activas ===== -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const HASH_MAP = {
+      '#inicio': '#dashboard,#dashboard-content,#home',
+      '#dashboard': '#dashboard,#dashboard-content',
+      '#calendario': '#calendario,#calendario-content',
+      '#cuentas': '#cuentas,#cuentas-content',
+      '#seguimiento': '#seguimiento,#seguimiento-content',
+      '#operaciones': '#operaciones,#operaciones-content',
+      '#analiticas': '#analiticas,#analiticas-content',
+      '#estrategias': '#estrategias,#estrategias-content',
+      '#configuracion': '#configuracion,#configuracion-content',
+      '#reportes': '#reportes,#reportes-content',
+      '#contacto': '#contacto,#contacto-content,#contact-content'
+    };
+    const isHash = (h) => h && h.startsWith('#') && h.length > 1;
+
+    function findTarget(hash){
+      const selList = (HASH_MAP[hash] || hash).split(',');
+      for (const s of selList){
+        const el = document.querySelector(s.trim());
+        if (el) return el;
+      }
+      return null;
+    }
+
+    function setActiveSection(el){
+      const all = document.querySelectorAll('.section-content');
+      if (all.length){
+        all.forEach(s => s.classList.remove('active'));
+        el.classList.add('active');
+        const top = document.querySelector('header').offsetHeight || 0;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }else{
+        el.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    }
+
+    function markActive(hash){
+      document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+      const link = document.querySelector(`nav a[href="\${hash}"]`);
+      if (link) link.classList.add('active');
+    }
+
+    function activate(hash){
+      const el = findTarget(hash);
+      if (!el) return;
+      setActiveSection(el);
+      markActive(hash);
+    }
+
+    document.querySelectorAll('nav a').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const href = a.getAttribute('href') || '';
+        if (isHash(href)){
+          e.preventDefault();
+          history.pushState(null, '', href);
+          activate(href);
+        }
+      });
+    });
+
+    if (isHash(location.hash)){ activate(location.hash); }
+    else { activate('#dashboard'); }
+
+    window.addEventListener('hashchange', () => {
+      if (isHash(location.hash)) activate(location.hash);
+    });
+  });
+  </script>
+</body>
+</html>
