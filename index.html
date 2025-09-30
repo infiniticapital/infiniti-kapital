@@ -214,6 +214,81 @@
       if (isHash(location.hash)) activate(location.hash);
     });
   });
-  </script>
+ <script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Mapa de hashes a IDs reales de secciones (ajústalo si tus IDs son otros)
+  const HASH_MAP = {
+    '#dashboard':   '#dashboard-content',
+    '#calendario':  '#calendario-content',
+    '#cuentas':     '#cuentas-content',
+    '#seguimiento': '#seguimiento-content',
+    '#operaciones': '#operaciones-content',
+    '#analiticas':  '#analiticas-content',
+    '#estrategias': '#estrategias-content',
+    '#configuracion':'#configuracion-content',
+    '#reportes':    '#reportes-content',
+    '#contacto':    '#contacto-content'
+  };
+
+  const isHash = h => h && h.startsWith('#') && h.length > 1;
+
+  function findTarget(hash){
+    const sel = HASH_MAP[hash] || hash; // si no está en el mapa, usa el hash tal cual
+    return document.querySelector(sel);
+  }
+
+  function showSection(target){
+    const sections = document.querySelectorAll('.section-content');
+    if (sections.length) {
+      sections.forEach(s => s.classList.remove('active'));
+      target.classList.add('active');
+      // opcional: hacer scroll al inicio tras activar
+      const headerH = document.querySelector('header')?.offsetHeight || 0;
+      window.scrollTo({ top: headerH ? headerH - 1 : 0, behavior: 'smooth' });
+    } else {
+      // Si no usas .section-content (landing) hace scroll normal
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  function markActive(hash){
+    document.querySelectorAll('nav a, .nav-item').forEach(a => a.classList.remove('active'));
+    const link = document.querySelector(`a[href="${hash}"]`);
+    if (link) link.classList.add('active');
+  }
+
+  function activate(hash){
+    const target = findTarget(hash);
+    if (!target) return;
+    showSection(target);
+    markActive(hash);
+  }
+
+  // Enlaces de menú (href="#...")
+  document.querySelectorAll('nav a, .nav-item').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const href = a.getAttribute('href') || '';
+      if (isHash(href)) {
+        e.preventDefault();
+        history.pushState(null, '', href);
+        activate(href);
+      }
+    });
+  });
+
+  // Cargar con hash directo
+  if (isHash(location.hash)) {
+    activate(location.hash);
+  } else {
+    // Sección por defecto
+    activate('#dashboard');
+  }
+
+  // Soportar back/forward del navegador
+  window.addEventListener('hashchange', () => {
+    if (isHash(location.hash)) activate(location.hash);
+  });
+});
+</script>
 </body>
 </html>
